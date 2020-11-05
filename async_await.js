@@ -3,7 +3,7 @@ function apiFetch(){
         setTimeout(function(){
             console.log("successful")
             resolve("data")
-            reject()
+            // reject()
 
         },1000)
     })
