@@ -2,7 +2,7 @@ function apiFetch(){
     let promise=new Promise(function(resolve,reject){
         setTimeout(function(){
             console.log("successful")
-            // resolve("data")
+            resolve("data")
             reject()
 
         },1000)
