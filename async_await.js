@@ -7,11 +7,11 @@ function apiFetch(){
 
         },1000)
     })
-    // .then(function(){
-        // console.log("this is then")
+    .then(function(){
+        console.log("this is then")
     // .catch(function(){
     //     console.log("this is catch")
-    // })
+    })
     // })
     return promise;
 }
