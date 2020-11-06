@@ -3,7 +3,7 @@ function apiFetch(){
         setTimeout(function(){
             console.log("This is promise")
             resolve(4);
-            // reject()
+            reject("error")
         },1000)
     })
     // .then(function(){
@@ -16,8 +16,13 @@ function apiFetch(){
      return promise;
     }
 async function _api(){
-    let data=await apiFetch()
-    console.log(data)
+    try{
+        let data=await apiFetch()
+    console.log(`${data} from resolve`)
+    }
+    catch(error){
+        console.log(`${error} from catch`)
+    }
 }
-// apiFetch()
 _api();
+apiFetch()
