@@ -20,4 +20,4 @@ async function _api(){
     console.log(data)
 }
 // apiFetch()
-_api()
+_api();
