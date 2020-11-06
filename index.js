@@ -1,40 +1,29 @@
-console.log("start")
+async function getData() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+    console.log("response= ", response)
 
-function callback1(){
-    setTimeout(function(){
-        console.log("Callback1")
-        
-    },3000)
-}
 
-function callback2(){
-    setTimeout(function(){
-        console.log("Callback2")
-        
-    },2000)
+    const data = await response.json()
+    console.log("Data= ", data)
 }
 
-function callback3(){
-    setTimeout(function(){
-        console.log("Callback3")
-        
-    },1000)
-}
-function func1(){
-    callback1();
-    console.log("func1")
-}
-func1()
+async function postData() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: "POST",
+        body: JSON.stringify({
+            title: 'Post data',
+            body: 'info',
+            userId: 6,
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+    console.log("response= ", response)
 
-function func2(){
-    callback2();
-    console.log("func2")
-}
-func2()
-function func3(){
-    callback3();
-    console.log("func3")
-}
-func3()
 
-console.log("end")
+    const data = await response.json()
+    console.log("Data= ", data)
+}
+getData();
+// postData();
